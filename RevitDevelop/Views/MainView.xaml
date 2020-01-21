@@ -1,0 +1,191 @@
+﻿<basic:BaseUserControl x:Class="RevitDevelop.Views.MainView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RevitDevelop.Views"
+      xmlns:basic="clr-namespace:BasicProject;assembly=BasicProject"
+      xmlns:aw="clr-namespace:Autodesk.Windows;assembly=AdWindows"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <aw:RibbonControl>
+            <aw:RibbonTab Title="Revi开发">
+                <aw:RibbonPanel>
+                    <aw:RibbonPanelSource Title="初级">
+                        <aw:RibbonButton Text="加载族" ShowText="True" MinWidth="80" Size="Large"  Orientation="Vertical"
+                                         CommandHandlerBinding="{Binding LoadFamily}" ToolTip="弹出对话框，选择族文件并加载到项目中">
+                            <aw:RibbonButton.Image>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.Image>
+                            <aw:RibbonButton.LargeImage>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.LargeImage>
+                        </aw:RibbonButton>
+                        <aw:RibbonButton Text="创建族实例" ShowText="True" MinWidth="80" Size="Large"  Orientation="Vertical"
+                                         CommandHandlerBinding="{Binding CreateInstance}" ToolTip="创建已加载的族到场景中">
+                            <aw:RibbonButton.Image>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.Image>
+                            <aw:RibbonButton.LargeImage>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.LargeImage>
+                        </aw:RibbonButton>
+                        <aw:RibbonButton Text="获取参数" ShowText="True" MinWidth="80" Size="Large"  Orientation="Vertical"
+                                         CommandHandlerBinding="{Binding GetParameter}" ToolTip="选择一个族实例，获取其所有参数，并用列表弹框展示">
+                            <aw:RibbonButton.Image>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.Image>
+                            <aw:RibbonButton.LargeImage>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.LargeImage>
+                        </aw:RibbonButton>
+                        <aw:RibbonButton Text="修改参数" ShowText="True" MinWidth="80" Size="Large"  Orientation="Vertical"
+                                         CommandHandlerBinding="{Binding EditParameter}" ToolTip="自选需要修改的参数进行修改，需要看到模型发生变化">
+                            <aw:RibbonButton.Image>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.Image>
+                            <aw:RibbonButton.LargeImage>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.LargeImage>
+                        </aw:RibbonButton>
+                        <aw:RibbonButton Text="过滤族实例" ShowText="True" MinWidth="80" Size="Large"  Orientation="Vertical"
+                                         CommandHandlerBinding="{Binding FilterInstance}" ToolTip="过滤项目中所有族实例，按照实例分类使用树结构弹框展示，添加族实例定位并高亮显示功能">
+                            <aw:RibbonButton.Image>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.Image>
+                            <aw:RibbonButton.LargeImage>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.LargeImage>
+                        </aw:RibbonButton>
+                        <aw:RibbonButton Text="绘制直线" ShowText="True" MinWidth="80" Size="Large"  Orientation="Vertical"
+                                         CommandHandlerBinding="{Binding CreateLine}" ToolTip="任意选择一个平面，在平面上可绘制任意直线">
+                            <aw:RibbonButton.Image>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.Image>
+                            <aw:RibbonButton.LargeImage>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.LargeImage>
+                        </aw:RibbonButton>
+                        <aw:RibbonButton Text="移动模型" ShowText="True" MinWidth="80" Size="Large"  Orientation="Vertical"
+                                         CommandHandlerBinding="{Binding MoveElem}" ToolTip="选中一个族实例，设定x、y、z的值对该族实例进行任意移动">
+                            <aw:RibbonButton.Image>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.Image>
+                            <aw:RibbonButton.LargeImage>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.LargeImage>
+                        </aw:RibbonButton>
+                        <aw:RibbonButton Text="旋转模型" ShowText="True" MinWidth="80" Size="Large"  Orientation="Vertical"
+                                         CommandHandlerBinding="{Binding RotateElem}" ToolTip="选中一个族实例，修改旋转角度对该族实例进行绕z轴的任意旋转">
+                            <aw:RibbonButton.Image>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.Image>
+                            <aw:RibbonButton.LargeImage>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.LargeImage>
+                        </aw:RibbonButton>
+                    </aw:RibbonPanelSource>
+                </aw:RibbonPanel>
+                <aw:RibbonPanel>
+                    <aw:RibbonPanelSource Title="中级">
+                        <aw:RibbonButton Text="停靠窗体" ShowText="True" MinWidth="80" Size="Large"  Orientation="Vertical"
+                                         CommandHandlerBinding="{Binding LoadCabin}" ToolTip="点击按钮，显示停靠对话框，再次点击按钮，隐藏停靠对话框；停靠对话框内展示项目中所有族实例列表">
+                            <aw:RibbonButton.Image>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.Image>
+                            <aw:RibbonButton.LargeImage>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.LargeImage>
+                        </aw:RibbonButton>
+                        <aw:RibbonButton Text="获取连接件" ShowText="True" MinWidth="80" Size="Large"  Orientation="Vertical"
+                                         CommandHandlerBinding="{Binding LoadCabinEquip}" ToolTip="选择一个族实例，获取该实例的所有连接件。需要添加验证功能：点击验证功能，在连接件的位置绘制一条直线，长度自定">
+                            <aw:RibbonButton.Image>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.Image>
+                            <aw:RibbonButton.LargeImage>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.LargeImage>
+                        </aw:RibbonButton>
+                        <aw:RibbonButton Text="添加参数" ShowText="True" MinWidth="80" Size="Large"  Orientation="Vertical"
+                                         CommandHandlerBinding="{Binding LoadCabinEquip}" ToolTip="选中一个族实例，添加实例参数“测试名称”">
+                            <aw:RibbonButton.Image>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.Image>
+                            <aw:RibbonButton.LargeImage>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.LargeImage>
+                        </aw:RibbonButton>
+                        <aw:RibbonButton Text="修改材质" ShowText="True" MinWidth="80" Size="Large"  Orientation="Vertical"
+                                         CommandHandlerBinding="{Binding LoadCabinEquip}" ToolTip="选中一个族实例，将其外观改为红色">
+                            <aw:RibbonButton.Image>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.Image>
+                            <aw:RibbonButton.LargeImage>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.LargeImage>
+                        </aw:RibbonButton>
+                        <aw:RibbonButton Text="获取缩略图" ShowText="True" MinWidth="80" Size="Large"  Orientation="Vertical"
+                                         CommandHandlerBinding="{Binding LoadCabinEquip}" ToolTip="选中一个族实例，获取其缩略图并弹框展示">
+                            <aw:RibbonButton.Image>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.Image>
+                            <aw:RibbonButton.LargeImage>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.LargeImage>
+                        </aw:RibbonButton>
+                    </aw:RibbonPanelSource>
+                </aw:RibbonPanel>
+                <aw:RibbonPanel>
+                    <aw:RibbonPanelSource Title="高级">
+                        <aw:RibbonButton Text="创建立方体" ShowText="True" MinWidth="80" Size="Large"  Orientation="Vertical"
+                                         CommandHandlerBinding="{Binding LoadCabin}" ToolTip="使用拉伸后台创建立方体">
+                            <aw:RibbonButton.Image>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.Image>
+                            <aw:RibbonButton.LargeImage>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.LargeImage>
+                        </aw:RibbonButton>
+                        <aw:RibbonButton Text="创建球" ShowText="True" MinWidth="80" Size="Large"  Orientation="Vertical"
+                                         CommandHandlerBinding="{Binding LoadCabinEquip}" ToolTip="使用旋转后台创建球体">
+                            <aw:RibbonButton.Image>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.Image>
+                            <aw:RibbonButton.LargeImage>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.LargeImage>
+                        </aw:RibbonButton>
+                        <aw:RibbonButton Text="创建管" ShowText="True" MinWidth="80" Size="Large"  Orientation="Vertical"
+                                         CommandHandlerBinding="{Binding LoadCabinEquip}" ToolTip="使用放样后台创建管（空心）">
+                            <aw:RibbonButton.Image>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.Image>
+                            <aw:RibbonButton.LargeImage>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.LargeImage>
+                        </aw:RibbonButton>
+                        <aw:RibbonButton Text="模型半透明" ShowText="True" MinWidth="80" Size="Large"  Orientation="Vertical"
+                                         CommandHandlerBinding="{Binding LoadCabinEquip}" ToolTip="选中一个族实例，将其透明度设为0.5">
+                            <aw:RibbonButton.Image>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.Image>
+                            <aw:RibbonButton.LargeImage>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.LargeImage>
+                        </aw:RibbonButton>
+                        <aw:RibbonButton Text="模型动态更新" ShowText="True" MinWidth="80" Size="Large"  Orientation="Vertical"
+                                         CommandHandlerBinding="{Binding LoadCabinEquip}" ToolTip="假定有A实例和B实例，移动A实例，B实例跟着同步移动。删除A实例，B实例同步删除">
+                            <aw:RibbonButton.Image>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.Image>
+                            <aw:RibbonButton.LargeImage>
+                                <BitmapImage UriSource="../Resource/Img/练习.png"></BitmapImage>
+                            </aw:RibbonButton.LargeImage>
+                        </aw:RibbonButton>
+                    </aw:RibbonPanelSource>
+                </aw:RibbonPanel>
+            </aw:RibbonTab>
+        </aw:RibbonControl>
+    </Grid>
+</basic:BaseUserControl>
