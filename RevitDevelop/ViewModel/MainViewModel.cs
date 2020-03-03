@@ -10,6 +10,7 @@ namespace RevitDevelop.ViewModel
 {
     public class MainViewModel
     {
+        #region 初级
         public RevitCommand LoadFamily { get; set; }
         public RevitCommand CreateInstance { get; set; }
         public RevitCommand GetParameter { get; set; }
@@ -18,10 +19,14 @@ namespace RevitDevelop.ViewModel
         public RevitCommand CreateLine { get; set; }
         public RevitCommand MoveElem { get; set; }
         public RevitCommand RotateElem { get; set; }
+        #endregion
 
         public MainViewModel()
         {
             LoadFamily = new CmdLoadFamily();
+            CreateInstance = new CmdCreateInstance();
+            GetParameter = new CmdGetParameter();
+            EditParameter = new CmdEditParameter();
         }
     }
 }

@@ -9,7 +9,6 @@ F:\MyDevelopment\MyProject\RevitDevelop\RevitDevelop\bin\Debug\RevitAPIUI.dll
 F:\MyDevelopment\MyProject\RevitDevelop\RevitDevelop\bin\Debug\ResourceLibrary.dll
 F:\MyDevelopment\MyProject\RevitDevelop\RevitDevelop\bin\Debug\System.Windows.Interactivity.dll
 F:\MyDevelopment\MyProject\RevitDevelop\RevitDevelop\bin\Debug\RevitAddInUtility.dll
-F:\MyDevelopment\MyProject\RevitDevelop\RevitDevelop\bin\Debug\System.Windows.Interactivity.xml
 F:\MyDevelopment\MyProject\RevitDevelop\RevitDevelop\obj\Debug\Views\MainView.g.cs
 F:\MyDevelopment\MyProject\RevitDevelop\RevitDevelop\obj\Debug\RevitDevelop_MarkupCompile.cache
 F:\MyDevelopment\MyProject\RevitDevelop\RevitDevelop\obj\Debug\RevitDevelop_MarkupCompile.lref
@@ -19,3 +18,14 @@ F:\MyDevelopment\MyProject\RevitDevelop\RevitDevelop\obj\Debug\RevitDevelop.cspr
 F:\MyDevelopment\MyProject\RevitDevelop\RevitDevelop\obj\Debug\RevitDevelop.csproj.CopyComplete
 F:\MyDevelopment\MyProject\RevitDevelop\RevitDevelop\obj\Debug\RevitDevelop.dll
 F:\MyDevelopment\MyProject\RevitDevelop\RevitDevelop\obj\Debug\RevitDevelop.pdb
+F:\MyDevelopment\MyProject\RevitDevelop\RevitDevelop\obj\Debug\Views\ParameterGrid.g.cs
+F:\MyDevelopment\MyProject\RevitDevelop\RevitDevelop\obj\Debug\Views\ParameterGrid.baml
+F:\MyDevelopment\MyProject\RevitDevelop\RevitDevelop\obj\Debug\Views\EditParamView.g.cs
+F:\MyDevelopment\MyProject\RevitDevelop\RevitDevelop\bin\Debug\RevitDevelop.dll.config
+F:\MyDevelopment\MyProject\RevitDevelop\RevitDevelop\bin\Debug\Caliburn.Micro.dll
+F:\MyDevelopment\MyProject\RevitDevelop\RevitDevelop\bin\Debug\Caliburn.Micro.Platform.Core.dll
+F:\MyDevelopment\MyProject\RevitDevelop\RevitDevelop\bin\Debug\Caliburn.Micro.Platform.dll
+F:\MyDevelopment\MyProject\RevitDevelop\RevitDevelop\bin\Debug\Caliburn.Micro.xml
+F:\MyDevelopment\MyProject\RevitDevelop\RevitDevelop\bin\Debug\Caliburn.Micro.Platform.xml
+F:\MyDevelopment\MyProject\RevitDevelop\RevitDevelop\bin\Debug\Caliburn.Micro.Platform.Core.xml
+F:\MyDevelopment\MyProject\RevitDevelop\RevitDevelop\obj\Debug\Views\EditParamView.baml
