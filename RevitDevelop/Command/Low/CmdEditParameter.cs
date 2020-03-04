@@ -3,6 +3,7 @@ using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
 using DotNet.REVIT.External;
+using RevitDevelop.Common;
 using RevitDevelop.ViewModel;
 using RevitDevelop.Views;
 using System;
@@ -20,6 +21,8 @@ namespace RevitDevelop.Command.Low
     public class CmdEditParameter : RevitCommand
     {
         Document _doc;
+        FamilyInstance _ins;
+        private RevitStatusBar _statusBar = RevitStatusBar.Create();
         public override bool IsCommandAvailable(UIApplication app)
         {
             if (app.ActiveUIDocument == null) return false;
@@ -31,14 +34,27 @@ namespace RevitDevelop.Command.Low
             _doc = data.Application.ActiveUIDocument.Document;
             Selection selection = data.Application.ActiveUIDocument.Selection;
             Reference refe = selection.PickObject(ObjectType.Element, "请选择一个实例");
-            FamilyInstance fi = _doc.GetElement(refe) as FamilyInstance;
-            if(fi != null)
+            _ins = _doc.GetElement(refe) as FamilyInstance;
+            if(_ins != null)
             {
-                EditParamViewModel vm = new EditParamViewModel();
+                string len = _ins.LookupParameter("长度").AsValueString();
+                string wid = _ins.LookupParameter("宽度").AsValueString();
+                string hei = _ins.LookupParameter("高度").AsValueString();
+                EditParamViewModel vm = new EditParamViewModel(len, wid, hei);
+                vm.EditParam = SaveParam;
                 EditParamView frm = new EditParamView(vm);
                 frm.ShowDialog();
             }
             return Result.Succeeded;
+        }
+
+        private void SaveParam(string len,string wid,string hei)
+        {
+            if (_ins == null) return;
+            _ins.LookupParameter("长度").SetValueString(len);
+            _ins.LookupParameter("宽度").SetValueString(wid);
+            _ins.LookupParameter("高度").SetValueString(hei);
+            _statusBar.Set("修改成功");
         }
     }
 }

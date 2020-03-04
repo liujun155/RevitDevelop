@@ -32,7 +32,10 @@ namespace RevitDevelop.Views
         private void BtnOk_Click(object sender, RoutedEventArgs e)
         {
             if (this.DataContext is EditParamViewModel)
-                (this.DataContext as EditParamViewModel).BtnSave();
+            {
+                if ((this.DataContext as EditParamViewModel).BtnSave())
+                    this.Close();
+            }
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)

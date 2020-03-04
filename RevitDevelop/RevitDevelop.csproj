@@ -77,6 +77,7 @@
   <ItemGroup>
     <Compile Include="Command\Low\CmdCreateInstance.cs" />
     <Compile Include="Command\Low\CmdEditParameter.cs" />
+    <Compile Include="Command\Low\CmdFilterInstance.cs" />
     <Compile Include="Command\Low\CmdGetParameter.cs" />
     <Compile Include="Command\Low\CmdLoadFamily.cs" />
     <Compile Include="Common\RevitStatusBar.cs" />

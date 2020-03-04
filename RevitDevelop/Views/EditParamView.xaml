@@ -20,7 +20,23 @@
             <Setter Property="HorizontalAlignment" Value="Center"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
             <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
             <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Grid>
+                            <Rectangle RadiusX="5" RadiusY="5" Fill="{TemplateBinding Background}" Stroke="#808080"  StrokeThickness="1.3"/>
+                            <ScrollViewer x:Name="PART_ContentHost"
+                          HorizontalScrollBarVisibility="Hidden"
+                          VerticalScrollBarVisibility="Hidden"
+                          Padding="{TemplateBinding Padding}"
+                          Focusable="false">
+                            </ScrollViewer>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <!--<Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type TextBox}">
                         <Grid>
@@ -28,7 +44,7 @@
                         </Grid>
                     </ControlTemplate>
                 </Setter.Value>
-            </Setter>
+            </Setter>-->
         </Style>
         <Style TargetType="Button">
             <Setter Property="Width" Value="60"></Setter>

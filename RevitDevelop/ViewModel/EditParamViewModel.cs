@@ -9,6 +9,8 @@ namespace RevitDevelop.ViewModel
 {
     public class EditParamViewModel : Screen
     {
+        public Action<string, string, string> EditParam;
+
         private string _length;
         public string Length
         {
@@ -42,14 +44,19 @@ namespace RevitDevelop.ViewModel
             }
         }
 
-        public void BtnSave()
+        public bool BtnSave()
         {
-            Length = "999";
+            if (EditParam != null && !string.IsNullOrEmpty(Length) && !string.IsNullOrEmpty(Width) && !string.IsNullOrEmpty(Height))
+            {
+                EditParam(Length, Width, Height);
+                return true;
+            }
+            return false;
         }
 
-        public EditParamViewModel()
+        public EditParamViewModel(string len, string wid, string hei)
         {
-            Length = "1";Width = "2";Height = "3";
+            Length = len;Width = wid;Height = hei;
         }
     }
 }
